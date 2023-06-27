@@ -1,0 +1,44 @@
+.tarjetas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.tarjeta {
+    background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    border-radius: 10px;
+    width: 300px;
+    -webkit-box-shadow: 10px 10px 33px -10px rgba(0,0,0,0.62);
+    -moz-box-shadow: 10px 10px 33px -10px rgba(0,0,0,0.62);
+    box-shadow: 10px 10px 33px -10px rgba(0,0,0,0.62);
+    transition: transform 0.3s ease;
+    text-align: center;
+    .seccion-boton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.destino {
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 16px;
+    color: #333;
+}
+
+.categoria {
+    font-size: 14px;
+    color: #777;
+}

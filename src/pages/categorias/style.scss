@@ -1,0 +1,12 @@
+.contenedor-tarjetas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    h1{
+        font-size: 48px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+}

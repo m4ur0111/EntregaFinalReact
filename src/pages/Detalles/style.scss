@@ -1,0 +1,33 @@
+.contenedor-general{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .detalles-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo-viaje{
+        color: white;
+    }
+    .titulo-detalles{
+        font-size: 48px;
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
+    .contenedor-datos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 900px;
+        p{
+            font-size: 18px;
+            font-weight: 400;
+        }
+        span{
+            font-weight: 600;
+        }
+    }
+}
