@@ -15,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home titulo="La mejor página para comparar precios!" />} />
         <Route path="/detallesVuelos/:tipo/:id" element={<Detalles />} />
+        <Route path="/detallesAlojamientos/:tipo/:id" element={<Detalles />} />
         <Route path="/categorias/:tipo" element={<Categorias />} />
       </Routes>
     </BrowserRouter>

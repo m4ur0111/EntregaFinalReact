@@ -26,33 +26,36 @@ const Detalles = () => {
   let detallesTitulo;
   let detallesContenido;
 
-  if (tipo === 'hotel') {
+  if (tipo === 'alojamientos') {
     detallesTitulo = 'Detalles del Alojamiento';
     const hotel = hoteles.find((hotel) => hotel.id === parseInt(id));
+
+    const divStyle = {
+      background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${hotel.imagen})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      width: '550px',
+      height: '250px',
+      borderRadius: '12px',
+      marginBottom: '50px',
+  };
 
     if (!hotel) {
       detallesContenido = <div>No se encontró el alojamiento</div>;
     } else {
+
       detallesContenido = (
         <div className="contenedor-datos">
-          <p>
-            <span>Nombre:</span> {hotel.nombre}
-          </p>
-          <p>
-            <span>Precio:</span> {hotel.precio} USD
-          </p>
-          <p>
-            <span>Categoría:</span> {hotel.categoria}
-          </p>
-          <p>
-            <span>Ubicación:</span> {hotel.ubicacion}
-          </p>
-          <p>
-            <span>Incluye transporte:</span> {hotel.incluyeTransporte ? 'Sí' : 'No'}
-          </p>
-          <p>
-            <span>Descripción:</span> {hotel.descripcion}
-          </p>
+          <div className="detalles-container" style={divStyle}>
+            <p className='titulo-viaje'>Destino: {hotel.nombre}</p>
+          </div>
+          <p><span>Categoria:</span> {hotel.categoria}</p>
+          <p><span>Ubicación:</span> {hotel.ubicacion}</p>
+          <p><span>Incluye comida:</span> {hotel.incluyeComida ? 'Sí' : 'No'}</p>
+          <p><span>Incluye transporte:</span> {hotel.incluyeTransporte ? 'Sí' : 'No'}</p>
+          <p><span>Precio:</span> {hotel.precio} USD</p>
+          <p><span>Descripción:</span> {hotel.descripcion}</p>
         </div>
       );
     }
@@ -65,8 +68,8 @@ const Detalles = () => {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-      width: '950px',
-      height: '450px',
+      width: '550px',
+      height: '250px',
       borderRadius: '12px',
       marginBottom: '50px',
   };
