@@ -4,11 +4,9 @@ import Container from 'react-bootstrap/Container';
 import { Nav } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import imagen from './img/logo-completo.png';
-import Button from '../common/Button/button';
 import * as React from 'react';
-import Badge from '@mui/material/Badge';
-import AirplaneTicketIcon from '@mui/icons-material/AirplaneTicket';
 import { NavLink } from 'react-router-dom';
+import CartWidget from '../CartWidget/carrito';
 
 function BasicExample() {
     return (
@@ -25,10 +23,7 @@ function BasicExample() {
                     <NavLink exact to="/" className="link">Inicio</NavLink>
                     <NavLink to="/categorias/vuelos" className="link">Vuelos</NavLink>
                     <NavLink to="/categorias/alojamientos" className="link">Alojamientos</NavLink>
-                    <Badge badgeContent={1} color="primary">
-                    <AirplaneTicketIcon color="action" className="icono-ticket" />
-                    </Badge>
-                    <Button href="#link" text="Check in" />
+                    <CartWidget />
                 </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": 6,
         "nombre": "Motto by Hilton New York City Chelsea",
         "categoria": "Económico",
         "precio": 400,
@@ -8,29 +8,32 @@
         "duracion": "14 días",
         "incluyeComida": true,
         "incluyeTransporte": true,
+        "tipo": "Hotel",
         "descripcion": "Un hotel acogedor y asequible en el corazón de Nueva York. Disfruta de habitaciones confortables y servicios excelentes.",
         "imagen": "https://stories.hilton.com/uploads/2022/01/Motto-NYC-Chelsea-Joe-Thomas-3_HR.jpg"
     },
     {
-        "id": 2,
+        "id": 7,
         "nombre": "Hotel Malte - Astotel",
         "categoria": "Premium",
         "precio": 700,
         "duracion": "10 días",
         "incluyeComida": true,
         "incluyeTransporte": true,
+        "tipo": "Hotel",
         "ubicacion": "París",
         "descripcion": "Sumérgete en el lujo y la elegancia del Hotel Parisian. Con habitaciones espaciosas, comodidades de primera clase y vistas impresionantes de la ciudad.",
         "imagen": "https://media-cdn.tripadvisor.com/media/photo-s/12/13/71/5d/beautiful-front-of-the.jpg"
     },
     {
-        "id": 3,
+        "id": 8,
         "nombre": "Apa Hotel Nishiazabu",
         "categoria": "Lujo",
         "precio": 900,
         "duracion": "7 días",
         "incluyeComida": false,
         "incluyeTransporte": true,
+        "tipo": "Hotel",
         "ubicacion": "Tokio",
         "descripcion": "Experimenta la opulencia en el Hotel Tokyo Tower. Disfruta de habitaciones lujosas, servicio excepcional y una ubicación conveniente cerca de las principales atracciones de la ciudad.",
         "imagen": "https://media-cdn.tripadvisor.com/media/photo-s/10/d0/29/93/caption.jpg"

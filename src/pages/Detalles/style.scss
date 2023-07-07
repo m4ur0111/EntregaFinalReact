@@ -30,4 +30,15 @@
             font-weight: 600;
         }
     }
+    .cantidad-input {
+        width: 50px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    label {
+        margin-right: 10px;
+        font-weight: bold;
+    }
 }

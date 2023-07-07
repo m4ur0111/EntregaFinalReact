@@ -7,6 +7,7 @@
         "duracion": "7 días",
         "incluyeComida": false,
         "incluyeTransporte": true,
+        "tipo": "Vuelo",
         "descripcion": "Disfruta de una emocionante semana en la vibrante ciudad de Nueva York. Descubre sus famosos rascacielos, visita Times Square y Central Park, y aprovecha las mejores ofertas de compras.",
         "imagen": "https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
     },
@@ -18,6 +19,7 @@
         "duracion": "10 días",
         "incluyeComida": true,
         "incluyeTransporte": true,
+        "tipo": "Vuelo",
         "descripcion": "Sumérgete en la belleza y elegancia de la ciudad del amor. Disfruta de los encantos de París, desde la majestuosidad de la Torre Eiffel hasta los exquisitos sabores de la cocina francesa.",
         "imagen": "https://images.pexels.com/photos/8430372/pexels-photo-8430372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
@@ -29,6 +31,7 @@
         "duracion": "14 días",
         "incluyeComida": true,
         "incluyeTransporte": true,
+        "tipo": "Vuelo",
         "descripcion": "Vive una experiencia única en la moderna y fascinante ciudad de Tokio. Explora la cultura japonesa, admira la arquitectura futurista y disfruta de la deliciosa comida local.",
         "imagen": "https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80"
     }

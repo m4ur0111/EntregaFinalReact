@@ -8,14 +8,30 @@
     align-items: center;
     .textoMain{
         color: black;
-        font-weight: 700;
+        font-weight: 400;
         max-width: 600px;
         text-align: center;
         margin-bottom: 15px;
         h1{
             font-size: 50px;
             font-weight: 300;
-
+        }
+    }
+    .contenedor-texto{
+        background-image: url(https://img.freepik.com/foto-gratis/hermosa-foto-lago-cristalino-junto-base-montana-nevada-dia-soleado_181624-5459.jpg?w=1380&t=st=1688753910~exp=1688754510~hmac=83244d5a953d32d6fe5309afdf53a42557fc321b5aa08426737af2cdb7f1b1d2);
+        height: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h2{
+            font-size: 46px;
+            font-weight: 300;
+            color: white;
         }
     }
 }
