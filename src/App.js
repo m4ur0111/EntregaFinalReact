@@ -8,6 +8,7 @@ import Detalles from './pages/Detalles';
 import Categorias from './pages/categorias/index';
 import Carrito from './components/Carrito/carrito';
 import Form from './components/Form';
+import Pago from './components/pagoFinalizado';
 import { CarritoProvider } from './Context/carritoContext';
 
 
@@ -22,7 +23,8 @@ function App() {
               <Route path="/detallesAlojamientos/:tipo/:id" element={<Detalles />} />
               <Route path="/categorias/:tipo" element={<Categorias />} />
               <Route path="/carrito" element={<Carrito />} />
-              <Route path="/finalizar" element={<Form />} />
+              <Route path="/finalizar/:id" element={<Form />} />
+              <Route path="/finalizado/:id" element={<Pago />} />
             </Routes>
           </CarritoProvider>
       </BrowserRouter>

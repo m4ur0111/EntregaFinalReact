@@ -1,6 +1,6 @@
 // Importa las funciones necesarias de los SDK que necesites
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -13,7 +13,7 @@ const firebaseConfig = {
 };
 
 // Inicializa Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Exporta la instancia de Firestore
-export const db = getFirestore();
+export const db = getFirestore(app);

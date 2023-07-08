@@ -1,0 +1,23 @@
+.pago-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto 0;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }  
+  
+  .pago-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .pago-id {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
