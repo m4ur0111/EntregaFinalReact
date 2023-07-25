@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import datosVuelos from '../../vuelos.json';
 import datosHoteles from '../../hoteles.json';
-import Tarjetas from '../../components/Cartas/cartas';
+import ItemListContainer from '../../components/itemListContainer/itemListContainer';
 import './style.scss';
 
 const Categorias = () => {
@@ -27,7 +27,7 @@ const Categorias = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'start', alignItems: 'center', height: '100vh' }}>
         <h1 style={{ marginTop: '60px', marginBottom: '60px', fontSize: '48px', fontWeight: '300'}}>{titulo}</h1> {/* Mostrar el título */}
-        <Tarjetas datos={datos} />
+        <ItemListContainer datos={datos} />
         </div>
     );
 };

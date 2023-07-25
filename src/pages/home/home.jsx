@@ -1,7 +1,8 @@
 import React from "react";
 import './style.scss';
 import BasicTooltip from "../../components/Categorias";
-import Tarjetas from "../../components/Cartas/cartas";
+// import Tarjetas from "../../components/Cartas/cartas";
+import ItemListContainer from "../../components/itemListContainer/itemListContainer";
 
 function Home(props){
     return(
@@ -14,7 +15,7 @@ function Home(props){
                 <div className="contenedor-texto">
                     <h2>Los mejores destinos en un solo lugar</h2>
                 </div>
-                <Tarjetas />
+                <ItemListContainer />
             </div>
         </>
     );

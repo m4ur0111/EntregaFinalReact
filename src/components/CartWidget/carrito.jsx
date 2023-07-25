@@ -8,14 +8,15 @@ import Tooltip from '@mui/material/Tooltip';
 function CartWidget() {
     const { carrito } = useContext(CarritoContext);
 
-    const cantidadCarrito = carrito.length;
+    // Obtener la cantidad de ítems diferentes en el carrito
+    const cantidadCarrito = new Set(carrito.map(item => item.id)).size;
 
     return (
         <Tooltip title="Carrito">
-            <NavLink to="/carrito" className="cart-button">
+        <NavLink to="/carrito" className="cart-button">
             <ShoppingCartIcon style={{ color: 'black' }} />
             <span className="cart-quantity">{cantidadCarrito}</span>
-            </NavLink>
+        </NavLink>
         </Tooltip>
     );
 }

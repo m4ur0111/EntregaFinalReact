@@ -10,6 +10,7 @@
     }
     .titulo-viaje{
         color: white;
+        font-size: 34px;
     }
     .titulo-detalles{
         font-size: 48px;
@@ -40,5 +41,18 @@
     label {
         margin-right: 10px;
         font-weight: bold;
+    }
+    .tit-desc{
+        font-weight: 600;
+    }
+    p{
+        font-size: 20px;
+        font-weight: 300;
+        text-align: center;
+    }
+    .error-mensaje {
+        color: red;
+        font-size: 18px;
+        margin-top: 5px;
     }
 }
