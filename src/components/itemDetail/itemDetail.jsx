@@ -39,7 +39,6 @@ const ItemDetail = ({ tipo, datoSeleccionado }) => {
         }
 
         setMostrarAlerta(true);
-        console.log('Datos agregados al carrito');
     };
 
     const divStyle = {

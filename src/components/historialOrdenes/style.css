@@ -1,0 +1,67 @@
+.profile-orders-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-orders-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.loading-message {
+    font-size: 16px;
+    color: #888;
+}
+
+.orders-list {
+    list-style: none;
+    padding: 0;
+}
+
+.order-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.order-id {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.order-date,
+.order-total,
+.order-products {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+}
+
+.product-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.product-item p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.no-orders-message {
+    font-size: 18px;
+    color: #888;
+    text-align: center;
+    padding: 20px;
+}

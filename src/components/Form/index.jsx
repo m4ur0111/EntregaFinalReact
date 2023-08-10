@@ -1,68 +1,82 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
-import './index.scss'
-import { useNavigate } from "react-router-dom";
+import './index.scss';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../../services/db';
-import { CarritoContext } from "../../Context/carritoContext";
+import { db, auth } from '../../services/db';
+import { CarritoContext } from '../../Context/carritoContext';
 
 const Form = () => {
-    const navigate = useNavigate(); // Agregar el hook useNavigate
+    const navigate = useNavigate();
+    const location = useLocation(); // Obtener la ubicación actual
 
     const { limpiarCarrito } = useContext(CarritoContext);
 
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
+    const [telefono, setTelefono] = useState('');
     const [email, setEmail] = useState('');
-    const [validarEmail, setValidarEmail] = useState('');
-    const [numero, setNumero] = useState('');
     const [error, setError] = useState('');
 
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+        if (user) {
+            setUser(user);
+        }
+        });
+        return () => unsubscribe();
+    }, []);
+
     const handleFinalizarCompra = async () => {
-        // Lógica para finalizar la compra y obtener el id de pago
         try {
-            const orden = {
-                productos: [],
-                total: 0,
-                fecha: new Date().toISOString()
-            };
+        // Obtener los datos de los productos desde la ubicación
+        const productos = location.state.productos;
 
-            const orderRef = await addDoc(collection(db, 'ordenes'), {
-                data: orden
-            });
+        const orden = {
+            userId: user.uid,
+            productos: productos,
+            total: productos.reduce((total, producto) => total + producto.precio * producto.cantidad, 0),
+            fecha: new Date().toISOString(),
+        };
 
-            const idPago = orderRef.id;
-            console.log('Orden guardada correctamente con ID:', idPago);
-            
-            // Vaciar el carrito
-            limpiarCarrito();
+        const orderRef = await addDoc(collection(db, 'ordenes'), {
+            data: orden,
+        });
 
-            navigate(`/finalizado/${idPago}`);
+        const idPago = orderRef.id;
+        console.log('Orden guardada correctamente con ID:', idPago);
+
+        limpiarCarrito();
+
+        navigate(`/finalizado/${idPago}`);
         } catch (error) {
-            console.error('Error al finalizar la compra:', error);
+        console.error('Error al finalizar la compra:', error);
         }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Validar campos requeridos
-        if (!nombre || !apellido || !email || !validarEmail || !numero) {
-            setError('Todos los campos son requeridos');
+        if (!user) {
+            setError('Debes iniciar sesión para finalizar la compra');
             return;
         }
 
-        // Validar que los emails coincidan
-        if (email !== validarEmail) {
-            setError('Los campos de email no coinciden');
-            return;
+        if (!nombre || !apellido || !telefono || !email) {
+        setError('Todos los campos son requeridos');
+        return;
+        }
+
+        if (user && email !== user.email) {
+        setError('El email no coincide con el email del usuario registrado');
+        return;
         }
 
         handleFinalizarCompra();
-        // Resto de la lógica para enviar el formulario
-        console.log('Formulario enviado');
         setError('');
     };
 
@@ -87,28 +101,20 @@ const Form = () => {
                     onChange={(e) => setApellido(e.target.value)}
                 />
                 <TextField
+                    id="telefono"
+                    label="Teléfono"
+                    variant="outlined"
+                    className="form-input"
+                    value={telefono}
+                    onChange={(e) => setTelefono(e.target.value)}
+                />
+                <TextField
                     id="email"
                     label="Email"
                     variant="outlined"
                     className="form-input"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                />
-                <TextField
-                    id="validarEmail"
-                    label="Repetir Email"
-                    variant="outlined"
-                    className="form-input"
-                    value={validarEmail}
-                    onChange={(e) => setValidarEmail(e.target.value)}
-                />
-                <TextField
-                    id="numero"
-                    label="Telefono"
-                    variant="outlined"
-                    className="form-input"
-                    value={numero}
-                    onChange={(e) => setNumero(e.target.value)}
                 />
                 {error && <Alert severity="error" className="form-alert">{error}</Alert>}
                 <Button variant="contained" color="primary" className="form-button" type="submit">

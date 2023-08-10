@@ -37,7 +37,6 @@ const ItemListContainer = () => {
                 }));
                 setItems(data);
 
-                console.log('items:', data);
             } catch (error) {
                 console.log(error);
             }

@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+hoteles.json
+vuelos.json
 
 # testing
 /coverage
